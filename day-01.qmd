@@ -1,0 +1,92 @@
+---
+title: "Advent of Code"
+subtitle: "Day 1"
+format: html
+---
+
+## Comparison of lists - or vectors...
+
+As always:
+
+```{r}
+library(tidyverse)
+```
+
+### Part 1
+
+#### The example
+
+Like we are used to in Project Euler we get a small example, and the result,
+in order for us to be able to check our method.
+
+```{r}
+example <- tribble(~list1, ~list2,
+3,   4,
+4,   3,
+2,   5,
+1,   3,
+3,   9,
+3,   3)
+```
+
+This is simple, as it should be on the first day.
+
+Sort the two vectors, direction does not matter, and calculate the
+absolute difference, then add everything together:
+
+```{r}
+sum(abs(sort(example$list1) - sort(example$list2)))
+```
+
+#### The actual task
+
+Downloading the lists computationally is a bit cumbersome. I'm simply saving
+it directly to disk and reading it:
+
+```{r}
+data <- read_delim("data/01-input", delim = "   ", col_names = F)
+```
+
+
+```{r}
+sum(abs(sort(data$X1) - sort(data$X2)))
+```
+
+
+### Part 2
+
+Count how many times the numbers in list 1 occurs in list 2, multiply the
+numbers in list 1 with the count from list 2, and sum.
+
+#### The example
+
+```{r}
+example %>% 
+  count(list2) %>% 
+  right_join(example, by = c("list2" = "list1")) %>% 
+  transmute(sim_score = n*list2) %>% 
+  summarise(answer = sum(sim_score, na.rm = TRUE))
+```
+
+Count the occurences of numbers in list 2, right join - due to the flow in
+the pipe on example. Remember to join on the correct columns. Transmute to 
+get the count multiplied by the number. Do not confuse yourself that the column
+is now called list2. And summarise. Use na.rm = T, to account for missing mathces
+resulting in NA values.
+
+Correct answer - the method is working.
+
+#### The actual task
+
+```{r}
+data %>% 
+  count(X2) %>% 
+  right_join(data, by = c("X2" = "X1")) %>% 
+  transmute(sim_score = n*X2) %>% 
+  summarise(answer = sum(sim_score, na.rm = TRUE))
+```
+
+Remember to change column names, and to join on the actual data, rather than
+on example. 
+
+Done.
