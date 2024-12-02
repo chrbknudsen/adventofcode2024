@@ -1,0 +1,118 @@
+---
+title: "Day 02"
+format: html
+---
+
+As always:
+```{r}
+library(tidyverse)
+```
+
+We need to generate diffences between succesive numbers. And then
+check if they are all increasing, or all decreasing. _And_ if the
+increase/decrease is between 1 and 3 inclusive.
+
+## The example
+
+First write a fuction, that, given a vector of numerics,
+calculates the change from element to element.
+It then checks if they are all increasing or decreasing.
+And if the absolute change is larger than 0 or smaller than 4. 
+
+```{r}
+check <- function(x){
+  x <- c(x[-1], NA) - x
+  x <- x[!is.na(x)]
+  res1 <- all(sign(x) == 1) | all(sign(x) == -1) # all increasing or decreasing
+  res2 <- all(abs(x) < 4 & abs(x) > 0)
+  res1 & res2
+}
+```
+
+The tricky thing was to construct the vector with the changes from 
+element to element. And it was not that tricky.
+
+Rather than constructing the example manually, I saved it to a 
+txt-file. 
+
+I read it, convert it to at tibble, split it on white spaces, and 
+coerce it to numeric. All in a list-column:
+
+```{r}
+example <- readLines("data/day-02-example.txt") %>% 
+  as_tibble() %>% 
+  mutate(vectors = str_split(value, " ")) %>% 
+  mutate(vectors = map( vectors, as.numeric))
+```
+
+Now we can map the check-function the list-column, unnest it, at 
+sum all the logical values:
+
+```{r}
+example %>% 
+  transmute(check = map(vectors, check)) %>% 
+  unnest(check) %>% 
+  summarise(answer = sum(check))
+```
+
+# Task 1
+
+Having checked that the example returns the correct answer, we run 
+it on the input. First read in the data:
+
+```{r}
+task <- readLines("data/day-02-input.txt") %>% as_tibble() %>% 
+  mutate(vectors = str_split(value, " ")) %>% 
+  mutate(vectors = map( vectors, as.numeric))
+```
+
+And now we do the exact same operations:
+
+```{r}
+task %>% 
+  transmute(check = map(vectors, check)) %>% 
+  unnest(check) %>% 
+  summarise(answer = sum(check))
+
+```
+  
+
+        
+
+# part2
+
+We need to remove the first element in the vector, and check it. And 
+to remove the second element and check that, etc. 
+
+We write a new function, which by default returns FALSE, but if 
+one of the point-deletions of an element lead the vector to pass the 
+check-function, it returns TRUE:
+
+```{r}
+dampener <- function(x){
+  res <- FALSE
+  for(i in 1:length(x)){
+    if(check(x[-i])) res <- TRUE
+  }  
+  res
+}
+```
+
+
+We run that on the example:
+```{r}
+example %>% 
+  transmute(check = map(vectors, dampener)) %>% 
+  unnest(check) %>% 
+  summarise(answer = sum(check))
+```
+We get the correct answer, and now runt the same code on the task-data:
+
+```{r}
+task %>%   
+  transmute(check = map(vectors, dampener)) %>% 
+  unnest(check) %>% 
+  summarise(answer = sum(check))
+```
+
+Done.
