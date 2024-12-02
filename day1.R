@@ -1,41 +1,56 @@
-# Opgave 1.1
+# opgave 2
 library(tidyverse)
-exempel <- tribble(~list1, ~list2,
-3,   4,
-4,   3,
-2,   5,
-1,   3,
-3,   9,
-3,   3)
-
-sum(abs(sort(exempel$list1) - sort(exempel$list2)))
-
-# get input
-data <- read_delim("data/input", col_names = F) %>% 
-  select(list1 = X1, list2 = X4)
-
-sum(abs(sort(data$list1) - sort(data$list2)))
 
 
-# Opgave 1.2
+
+check <- function(x){
+  x <- c(x[-1], NA) - x
+  x <- x[!is.na(x)]
+  res1 <- all(sign(x) == 1) | all(sign(x) == -1) # all increasing or decreasing
+  res2 <- all(abs(x) < 4 & abs(x) > 0)
+  res1 & res2
+}
 
 
-Så nu skal vi tælle hvor mange gange hvert tal optræder i kolonne 2. 
+readLines("data/day-02-example.txt") %>% as_tibble() %>% 
+  mutate(vectors = str_split(value, " ")) %>% 
+  mutate(vectors = map( vectors, as.numeric)) %>% 
+  transmute(check = map(vectors, check)) %>% 
+  unnest(check) %>% 
+  summarise(answer = sum(check))
 
-exempel %>% 
-  select(list2) %>% 
-  count(list2) %>% 
-  right_join(exempel, by = c("list2" = "list1")) %>% 
-  transmute(sim_score = n*list2) %>% 
-  summarise(answer = sum(sim_score, na.rm = TRUE))
+  
 
-Og på det rigtige datasæt
+readLines("data/day-02-input.txt") %>% as_tibble() %>% 
+  mutate(vectors = str_split(value, " ")) %>% 
+  mutate(vectors = map( vectors, as.numeric)) %>% 
+  transmute(check = map(vectors, check)) %>% 
+  unnest(check) %>% 
+  summarise(answer = sum(check))
+         
 
 
-data %>% 
-  select(list2) %>% 
-  count(list2) %>% 
-  right_join(data, by = c("list2" = "list1")) %>% 
-  transmute(sim_score = n*list2) %>% 
-  summarise(answer = sum(sim_score, na.rm = TRUE))
+# part2
 
+
+dampener <- function(x){
+  res <- FALSE
+  for(i in 1:length(x)){
+    if(check(x[-i])) res <- TRUE
+  }  
+  res
+}
+
+readLines("data/day-02-example.txt") %>% as_tibble() %>% 
+  mutate(vectors = str_split(value, " ")) %>% 
+  mutate(vectors = map( vectors, as.numeric)) %>% 
+  transmute(check = map(vectors, dampener)) %>% 
+  unnest(check) %>% 
+  summarise(answer = sum(check))
+
+readLines("data/day-02-input.txt") %>% as_tibble() %>% 
+  mutate(vectors = str_split(value, " ")) %>% 
+  mutate(vectors = map( vectors, as.numeric)) %>% 
+  transmute(check = map(vectors, dampener)) %>% 
+  unnest(check) %>% 
+  summarise(answer = sum(check))
