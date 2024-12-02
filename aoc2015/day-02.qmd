@@ -1,0 +1,86 @@
+---
+title: "Advent of Code 2015"
+subtitle: "Day 2"
+format: html
+---
+
+Wrapping packages.
+
+The total area of the box - we need to get the three pairwise products of
+width, length and height. The sum of that should be multiplied by 2. And the 
+smallest area should be added.
+
+Two tests:
+```{r}
+test_1 <- c(2,3,4)
+test_2 <- c(1,1,10)
+
+```
+
+We can get all the pairwise products using `combn`:
+
+```{r}
+(x <- combn(test_1, 2, prod))
+```
+The sum should be doubled, and the smallest value added:
+
+```{r}
+2*sum(x) + min(x)
+```
+That appears to be correct. Lets make a function:
+
+```{r}
+area <- function(x){
+  x <- combn(x, 2, prod)
+  2*sum(x) + min(x)
+}
+```
+
+It also returns the correct result for test_2:
+
+```{r}
+area(test_2)
+```
+
+
+Download the input, read it in, convert it to a tibble, split on "x", and 
+coerce to numeric:
+
+```{r}
+input <- readLines("data/day-02-input.txt") %>% as_tibble() %>% 
+  mutate(dimensions = map(value, str_split_1, "x")) %>% 
+  transmute(dimensions = map(dimensions, as.numeric))
+```
+
+Now map the area function on the list column, unnest and summarise to get the
+sum:
+
+```{r}
+input %>% 
+  transmute(area = map(dimensions, area)) %>% 
+  unnest(area) %>% 
+  summarise(svar = sum(area))
+```
+
+Neat.
+
+## Task 2
+
+Now we need the ribbon.
+
+
+# ribbon - er blot produktet
+
+wrap <- function(x){
+  2*(sum(x) - max(x))
+}
+
+
+readLines("aoc2015/data/day-02-input.txt") %>% as_tibble() %>% 
+  mutate(dimensions = map(value, str_split_1, "x")) %>% 
+  transmute(dimensions = map(dimensions, as.numeric)) %>% 
+  mutate(ribbon = map(dimensions, prod)) %>% 
+  mutate(wrap = map(dimensions, wrap)) %>% 
+  unnest(c(ribbon, wrap)) %>% 
+  transmute(sub_tot = ribbon + wrap) %>% 
+  summarise(svar = sum(sub_tot))
