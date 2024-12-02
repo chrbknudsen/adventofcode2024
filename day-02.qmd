@@ -1,5 +1,6 @@
 ---
-title: "Day 02"
+title: "Advent of Code 2024"
+subtitle: "Day 2"
 format: html
 ---
 

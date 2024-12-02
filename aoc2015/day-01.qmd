@@ -1,0 +1,68 @@
+---
+title: "Advent of Code 2015"
+subtitle: "Day 1"
+format: html
+---
+
+Task: https://adventofcode.com/2015/day/1
+
+We have some text strings containing opening and closing parentheses.
+
+Opening, ( indicates that we go one level up in an elevator. ) that we
+go one level down. 
+
+We want to determine which floor we end on. This is equivalent to 
+taking the sum of 1s (if the character is "("), and -1s (if the character is "(").
+
+We can split a test string in individual characters:
+
+```{r}
+test <- "))((((("
+str_split_1(test,"")
+```
+
+If we make a scheme in a named numeric vector, we can use the split string
+to index that scheme, and get 1s and -1s:
+
+
+```{r}
+scheme <- c("(" = 1, ")" = -1)
+scheme[str_split_1(test,"")]
+```
+
+And we can now sum all those numbers:
+
+```{r}
+sum(scheme[str_split_1(test,"")])
+```
+According to the site, this was the correct result!.
+
+Now read in the input, saved locally.
+
+
+```{r}
+input <- readLines("data/day-01-input.txt")
+```
+Remember to replace "test" with "input":
+```{r}
+sum(scheme[str_split_1(input,"")])
+```
+
+Correct result!
+
+Now task 2:
+
+Which parenthesis is the first that lead Santa to level -1 in the building?
+
+When we have the instructions (1s and -1s), we need the cumulative sum,
+and the first index that have a sum of -1. 
+
+So: In a horrible nested expression: Split, use that as index for the named 
+vector, get the cumulative sum, get the indices matching -1, and returning
+the minimum value:
+
+```{r}
+min(which(cumsum(scheme[str_split_1(input, "")]) == -1))
+```
+
+Done.
