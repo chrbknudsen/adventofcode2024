@@ -1,339 +1,339 @@
-NOT dq -> dr
-kg OR kf -> kh
-ep OR eo -> eq
-44430 -> b
-NOT gs -> gt
-dd OR do -> dp
-eg AND ei -> ej
-y AND ae -> ag
-jx AND jz -> ka
-lf RSHIFT 2 -> lg
-z AND aa -> ac
-dy AND ej -> el
-bj OR bi -> bk
-kk RSHIFT 3 -> km
-NOT cn -> co
-gn AND gp -> gq
-cq AND cs -> ct
-eo LSHIFT 15 -> es
-lg OR lm -> ln
-dy OR ej -> ek
-NOT di -> dj
-1 AND fi -> fj
-kf LSHIFT 15 -> kj
-NOT jy -> jz
-NOT ft -> fu
-fs AND fu -> fv
-NOT hr -> hs
-ck OR cl -> cm
-jp RSHIFT 5 -> js
-iv OR jb -> jc
-is OR it -> iu
-ld OR le -> lf
-NOT fc -> fd
-NOT dm -> dn
-bn OR by -> bz
-aj AND al -> am
-cd LSHIFT 15 -> ch
-jp AND ka -> kc
-ci OR ct -> cu
-gv AND gx -> gy
-de AND dk -> dm
-x RSHIFT 5 -> aa
-et RSHIFT 2 -> eu
-x RSHIFT 1 -> aq
-ia OR ig -> ih
-bk LSHIFT 1 -> ce
-y OR ae -> af
-NOT ca -> cb
-e AND f -> h
-ia AND ig -> ii
-ck AND cl -> cn
-NOT jh -> ji
-z OR aa -> ab
-1 AND en -> eo
-ib AND ic -> ie
-NOT eh -> ei
-iy AND ja -> jb
-NOT bb -> bc
-ha OR gz -> hb
-1 AND cx -> cy
-NOT ax -> ay
-ev OR ew -> ex
-bn RSHIFT 2 -> bo
-er OR es -> et
-eu OR fa -> fb
-jp OR ka -> kb
-ea AND eb -> ed
-k AND m -> n
-et RSHIFT 3 -> ev
-et RSHIFT 5 -> ew
-hz RSHIFT 1 -> is
-ki OR kj -> kk
-NOT h -> i
-lv LSHIFT 15 -> lz
-as RSHIFT 1 -> bl
-hu LSHIFT 15 -> hy
-iw AND ix -> iz
-lf RSHIFT 1 -> ly
-fp OR fv -> fw
-1 AND am -> an
-ap LSHIFT 1 -> bj
-u LSHIFT 1 -> ao
-b RSHIFT 5 -> f
-jq AND jw -> jy
-iu RSHIFT 3 -> iw
-ih AND ij -> ik
-NOT iz -> ja
-de OR dk -> dl
-iu OR jf -> jg
-as AND bd -> bf
-b RSHIFT 3 -> e
-jq OR jw -> jx
-iv AND jb -> jd
-cg OR ch -> ci
-iu AND jf -> jh
-lx -> a
-1 AND cc -> cd
-ly OR lz -> ma
-NOT el -> em
-1 AND bh -> bi
-fb AND fd -> fe
-lf OR lq -> lr
-bn RSHIFT 3 -> bp
-bn AND by -> ca
-af AND ah -> ai
-cf LSHIFT 1 -> cz
-dw OR dx -> dy
-gj AND gu -> gw
-jg AND ji -> jj
-jr OR js -> jt
-bl OR bm -> bn
-gj RSHIFT 2 -> gk
-cj OR cp -> cq
-gj OR gu -> gv
-b OR n -> o
-o AND q -> r
-bi LSHIFT 15 -> bm
-dy RSHIFT 1 -> er
-cu AND cw -> cx
-iw OR ix -> iy
-hc OR hd -> he
-0 -> c
-db OR dc -> dd
-kk RSHIFT 2 -> kl
-eq LSHIFT 1 -> fk
-dz OR ef -> eg
-NOT ed -> ee
-lw OR lv -> lx
-fw AND fy -> fz
-dz AND ef -> eh
-jp RSHIFT 3 -> jr
-lg AND lm -> lo
-ci RSHIFT 2 -> cj
-be AND bg -> bh
-lc LSHIFT 1 -> lw
-hm AND ho -> hp
-jr AND js -> ju
-1 AND io -> ip
-cm AND co -> cp
-ib OR ic -> id
-NOT bf -> bg
-fo RSHIFT 5 -> fr
-ip LSHIFT 15 -> it
-jt AND jv -> jw
-jc AND je -> jf
-du OR dt -> dv
-NOT fx -> fy
-aw AND ay -> az
-ge LSHIFT 15 -> gi
-NOT ak -> al
-fm OR fn -> fo
-ff AND fh -> fi
-ci RSHIFT 5 -> cl
-cz OR cy -> da
-NOT ey -> ez
-NOT ju -> jv
-NOT ls -> lt
-kk AND kv -> kx
-NOT ii -> ij
-kl AND kr -> kt
-jk LSHIFT 15 -> jo
-e OR f -> g
-NOT bs -> bt
-hi AND hk -> hl
-hz OR ik -> il
-ek AND em -> en
-ao OR an -> ap
-dv LSHIFT 1 -> ep
-an LSHIFT 15 -> ar
-fo RSHIFT 1 -> gh
-NOT im -> in
-kk RSHIFT 1 -> ld
-hw LSHIFT 1 -> iq
-ec AND ee -> ef
-hb LSHIFT 1 -> hv
-kb AND kd -> ke
-x AND ai -> ak
-dd AND do -> dq
-aq OR ar -> as
-iq OR ip -> ir
-dl AND dn -> do
-iu RSHIFT 5 -> ix
-as OR bd -> be
-NOT go -> gp
-fk OR fj -> fl
-jm LSHIFT 1 -> kg
-NOT cv -> cw
-dp AND dr -> ds
-dt LSHIFT 15 -> dx
-et RSHIFT 1 -> fm
-dy RSHIFT 3 -> ea
-fp AND fv -> fx
-NOT p -> q
-dd RSHIFT 2 -> de
-eu AND fa -> fc
-ba AND bc -> bd
-dh AND dj -> dk
-lr AND lt -> lu
-he RSHIFT 1 -> hx
-ex AND ez -> fa
-df OR dg -> dh
-fj LSHIFT 15 -> fn
-NOT kx -> ky
-gk OR gq -> gr
-dy RSHIFT 2 -> dz
-gh OR gi -> gj
-lj AND ll -> lm
-x OR ai -> aj
-bz AND cb -> cc
-1 AND lu -> lv
-as RSHIFT 3 -> au
-ce OR cd -> cf
-il AND in -> io
-dd RSHIFT 1 -> dw
-NOT lo -> lp
-c LSHIFT 1 -> t
-dd RSHIFT 3 -> df
-dd RSHIFT 5 -> dg
-lh AND li -> lk
-lf RSHIFT 5 -> li
-dy RSHIFT 5 -> eb
-NOT kt -> ku
-at OR az -> ba
-x RSHIFT 3 -> z
-NOT lk -> ll
-lb OR la -> lc
-1 AND r -> s
-lh OR li -> lj
-ln AND lp -> lq
-kk RSHIFT 5 -> kn
-ea OR eb -> ec
-ci AND ct -> cv
-b RSHIFT 2 -> d
-jp RSHIFT 1 -> ki
-NOT cr -> cs
-NOT jd -> je
-jp RSHIFT 2 -> jq
-jn OR jo -> jp
-lf RSHIFT 3 -> lh
-1 AND ds -> dt
-lf AND lq -> ls
-la LSHIFT 15 -> le
-NOT fg -> fh
-at AND az -> bb
-au AND av -> ax
-kw AND ky -> kz
-v OR w -> x
-kk OR kv -> kw
-ks AND ku -> kv
-kh LSHIFT 1 -> lb
-1 AND kz -> la
-NOT kc -> kd
-x RSHIFT 2 -> y
-et OR fe -> ff
-et AND fe -> fg
-NOT ac -> ad
-jl OR jk -> jm
-1 AND jj -> jk
-bn RSHIFT 1 -> cg
-NOT kp -> kq
-ci RSHIFT 3 -> ck
-ev AND ew -> ey
-1 AND ke -> kf
-cj AND cp -> cr
-ir LSHIFT 1 -> jl
-NOT gw -> gx
-as RSHIFT 2 -> at
-iu RSHIFT 1 -> jn
-cy LSHIFT 15 -> dc
-hg OR hh -> hi
-ci RSHIFT 1 -> db
-au OR av -> aw
-km AND kn -> kp
-gj RSHIFT 1 -> hc
-iu RSHIFT 2 -> iv
-ab AND ad -> ae
-da LSHIFT 1 -> du
-NOT bw -> bx
-km OR kn -> ko
-ko AND kq -> kr
-bv AND bx -> by
-kl OR kr -> ks
-1 AND ht -> hu
-df AND dg -> di
-NOT ag -> ah
-d OR j -> k
-d AND j -> l
-b AND n -> p
-gf OR ge -> gg
-gg LSHIFT 1 -> ha
-bn RSHIFT 5 -> bq
-bo OR bu -> bv
-1 AND gy -> gz
-s LSHIFT 15 -> w
-NOT ie -> if
-as RSHIFT 5 -> av
-bo AND bu -> bw
-hz AND ik -> im
-bp AND bq -> bs
-b RSHIFT 1 -> v
-NOT l -> m
-bp OR bq -> br
-g AND i -> j
-br AND bt -> bu
-t OR s -> u
-hz RSHIFT 5 -> ic
-gk AND gq -> gs
-fl LSHIFT 1 -> gf
-he RSHIFT 3 -> hg
-gz LSHIFT 15 -> hd
-hf OR hl -> hm
-1 AND gd -> ge
-fo OR fz -> ga
-id AND if -> ig
-fo AND fz -> gb
-gr AND gt -> gu
-he OR hp -> hq
-fq AND fr -> ft
-ga AND gc -> gd
-fo RSHIFT 2 -> fp
-gl OR gm -> gn
-hg AND hh -> hj
-NOT hn -> ho
-gl AND gm -> go
-he RSHIFT 5 -> hh
-NOT gb -> gc
-hq AND hs -> ht
-hz RSHIFT 3 -> ib
-hz RSHIFT 2 -> ia
-fq OR fr -> fs
-hx OR hy -> hz
-he AND hp -> hr
-gj RSHIFT 5 -> gm
-hf AND hl -> hn
-hv OR hu -> hw
-NOT hj -> hk
-gj RSHIFT 3 -> gl
-fo RSHIFT 3 -> fq
-he RSHIFT 2 -> hf
+NOT dq2015 -> dr2015
+kg2015 OR kf2015 -> kh2015
+ep2015 OR eo2015 -> eq2015
+3176 -> b2015
+NOT gs2015 -> gt2015
+dd2015 OR do2015 -> dp2015
+eg2015 AND ei2015 -> ej2015
+y2015 AND ae2015 -> ag2015
+jx2015 AND jz2015 -> ka2015
+lf2015 RSHIFT 2 -> lg2015
+z2015 AND aa2015 -> ac2015
+dy2015 AND ej2015 -> el2015
+bj2015 OR bi2015 -> bk2015
+kk2015 RSHIFT 3 -> km2015
+NOT cn2015 -> co2015
+gn2015 AND gp2015 -> gq2015
+cq2015 AND cs2015 -> ct2015
+eo2015 LSHIFT 15 -> es2015
+lg2015 OR lm2015 -> ln2015
+dy2015 OR ej2015 -> ek2015
+NOT di2015 -> dj2015
+1 AND fi2015 -> fj2015
+kf2015 LSHIFT 15 -> kj2015
+NOT jy2015 -> jz2015
+NOT ft2015 -> fu2015
+fs2015 AND fu2015 -> fv2015
+NOT hr2015 -> hs2015
+ck2015 OR cl2015 -> cm2015
+jp2015 RSHIFT 5 -> js2015
+iv2015 OR jb2015 -> jc2015
+is2015 OR it2015 -> iu2015
+ld2015 OR le2015 -> lf2015
+NOT fc2015 -> fd2015
+NOT dm2015 -> dn2015
+bn2015 OR by2015 -> bz2015
+aj2015 AND al2015 -> am2015
+cd2015 LSHIFT 15 -> ch2015
+jp2015 AND ka2015 -> kc2015
+ci2015 OR ct2015 -> cu2015
+gv2015 AND gx2015 -> gy2015
+de2015 AND dk2015 -> dm2015
+x2015 RSHIFT 5 -> aa2015
+et2015 RSHIFT 2 -> eu2015
+x2015 RSHIFT 1 -> aq2015
+ia2015 OR ig2015 -> ih2015
+bk2015 LSHIFT 1 -> ce2015
+y2015 OR ae2015 -> af2015
+NOT ca2015 -> cb2015
+e2015 AND f2015 -> h2015
+ia2015 AND ig2015 -> ii2015
+ck2015 AND cl2015 -> cn2015
+NOT jh2015 -> ji2015
+z2015 OR aa2015 -> ab2015
+1 AND en2015 -> eo2015
+ib2015 AND ic2015 -> ie2015
+NOT eh2015 -> ei2015
+iy2015 AND ja2015 -> jb2015
+NOT bb2015 -> bc2015
+ha2015 OR gz2015 -> hb2015
+1 AND cx2015 -> cy2015
+NOT ax2015 -> ay2015
+ev2015 OR ew2015 -> ex2015
+bn2015 RSHIFT 2 -> bo2015
+er2015 OR es2015 -> et2015
+eu2015 OR fa2015 -> fb2015
+jp2015 OR ka2015 -> kb2015
+ea2015 AND eb2015 -> ed2015
+k2015 AND m2015 -> n2015
+et2015 RSHIFT 3 -> ev2015
+et2015 RSHIFT 5 -> ew2015
+hz2015 RSHIFT 1 -> is2015
+ki2015 OR kj2015 -> kk2015
+NOT h2015 -> i2015
+lv2015 LSHIFT 15 -> lz2015
+as2015 RSHIFT 1 -> bl2015
+hu2015 LSHIFT 15 -> hy2015
+iw2015 AND ix2015 -> iz2015
+lf2015 RSHIFT 1 -> ly2015
+fp2015 OR fv2015 -> fw2015
+1 AND am2015 -> an2015
+ap2015 LSHIFT 1 -> bj2015
+u2015 LSHIFT 1 -> ao2015
+b2015 RSHIFT 5 -> f2015
+jq2015 AND jw2015 -> jy2015
+iu2015 RSHIFT 3 -> iw2015
+ih2015 AND ij2015 -> ik2015
+NOT iz2015 -> ja2015
+de2015 OR dk2015 -> dl2015
+iu2015 OR jf2015 -> jg2015
+as2015 AND bd2015 -> bf2015
+b2015 RSHIFT 3 -> e2015
+jq2015 OR jw2015 -> jx2015
+iv2015 AND jb2015 -> jd2015
+cg2015 OR ch2015 -> ci2015
+iu2015 AND jf2015 -> jh2015
+lx2015 -> a2015
+1 AND cc2015 -> cd2015
+ly2015 OR lz2015 -> ma2015
+NOT el2015 -> em2015
+1 AND bh2015 -> bi2015
+fb2015 AND fd2015 -> fe2015
+lf2015 OR lq2015 -> lr2015
+bn2015 RSHIFT 3 -> bp2015
+bn2015 AND by2015 -> ca2015
+af2015 AND ah2015 -> ai2015
+cf2015 LSHIFT 1 -> cz2015
+dw2015 OR dx2015 -> dy2015
+gj2015 AND gu2015 -> gw2015
+jg2015 AND ji2015 -> jj2015
+jr2015 OR js2015 -> jt2015
+bl2015 OR bm2015 -> bn2015
+gj2015 RSHIFT 2 -> gk2015
+cj2015 OR cp2015 -> cq2015
+gj2015 OR gu2015 -> gv2015
+b2015 OR n2015 -> o2015
+o2015 AND q2015 -> r2015
+bi2015 LSHIFT 15 -> bm2015
+dy2015 RSHIFT 1 -> er2015
+cu2015 AND cw2015 -> cx2015
+iw2015 OR ix2015 -> iy2015
+hc2015 OR hd2015 -> he2015
+0 -> c2015
+db2015 OR dc2015 -> dd2015
+kk2015 RSHIFT 2 -> kl2015
+eq2015 LSHIFT 1 -> fk2015
+dz2015 OR ef2015 -> eg2015
+NOT ed2015 -> ee2015
+lw2015 OR lv2015 -> lx2015
+fw2015 AND fy2015 -> fz2015
+dz2015 AND ef2015 -> eh2015
+jp2015 RSHIFT 3 -> jr2015
+lg2015 AND lm2015 -> lo2015
+ci2015 RSHIFT 2 -> cj2015
+be2015 AND bg2015 -> bh2015
+lc2015 LSHIFT 1 -> lw2015
+hm2015 AND ho2015 -> hp2015
+jr2015 AND js2015 -> ju2015
+1 AND io2015 -> ip2015
+cm2015 AND co2015 -> cp2015
+ib2015 OR ic2015 -> id2015
+NOT bf2015 -> bg2015
+fo2015 RSHIFT 5 -> fr2015
+ip2015 LSHIFT 15 -> it2015
+jt2015 AND jv2015 -> jw2015
+jc2015 AND je2015 -> jf2015
+du2015 OR dt2015 -> dv2015
+NOT fx2015 -> fy2015
+aw2015 AND ay2015 -> az2015
+ge2015 LSHIFT 15 -> gi2015
+NOT ak2015 -> al2015
+fm2015 OR fn2015 -> fo2015
+ff2015 AND fh2015 -> fi2015
+ci2015 RSHIFT 5 -> cl2015
+cz2015 OR cy2015 -> da2015
+NOT ey2015 -> ez2015
+NOT ju2015 -> jv2015
+NOT ls2015 -> lt2015
+kk2015 AND kv2015 -> kx2015
+NOT ii2015 -> ij2015
+kl2015 AND kr2015 -> kt2015
+jk2015 LSHIFT 15 -> jo2015
+e2015 OR f2015 -> g2015
+NOT bs2015 -> bt2015
+hi2015 AND hk2015 -> hl2015
+hz2015 OR ik2015 -> il2015
+ek2015 AND em2015 -> en2015
+ao2015 OR an2015 -> ap2015
+dv2015 LSHIFT 1 -> ep2015
+an2015 LSHIFT 15 -> ar2015
+fo2015 RSHIFT 1 -> gh2015
+NOT im2015 -> in2015
+kk2015 RSHIFT 1 -> ld2015
+hw2015 LSHIFT 1 -> iq2015
+ec2015 AND ee2015 -> ef2015
+hb2015 LSHIFT 1 -> hv2015
+kb2015 AND kd2015 -> ke2015
+x2015 AND ai2015 -> ak2015
+dd2015 AND do2015 -> dq2015
+aq2015 OR ar2015 -> as2015
+iq2015 OR ip2015 -> ir2015
+dl2015 AND dn2015 -> do2015
+iu2015 RSHIFT 5 -> ix2015
+as2015 OR bd2015 -> be2015
+NOT go2015 -> gp2015
+fk2015 OR fj2015 -> fl2015
+jm2015 LSHIFT 1 -> kg2015
+NOT cv2015 -> cw2015
+dp2015 AND dr2015 -> ds2015
+dt2015 LSHIFT 15 -> dx2015
+et2015 RSHIFT 1 -> fm2015
+dy2015 RSHIFT 3 -> ea2015
+fp2015 AND fv2015 -> fx2015
+NOT p2015 -> q2015
+dd2015 RSHIFT 2 -> de2015
+eu2015 AND fa2015 -> fc2015
+ba2015 AND bc2015 -> bd2015
+dh2015 AND dj2015 -> dk2015
+lr2015 AND lt2015 -> lu2015
+he2015 RSHIFT 1 -> hx2015
+ex2015 AND ez2015 -> fa2015
+df2015 OR dg2015 -> dh2015
+fj2015 LSHIFT 15 -> fn2015
+NOT kx2015 -> ky2015
+gk2015 OR gq2015 -> gr2015
+dy2015 RSHIFT 2 -> dz2015
+gh2015 OR gi2015 -> gj2015
+lj2015 AND ll2015 -> lm2015
+x2015 OR ai2015 -> aj2015
+bz2015 AND cb2015 -> cc2015
+1 AND lu2015 -> lv2015
+as2015 RSHIFT 3 -> au2015
+ce2015 OR cd2015 -> cf2015
+il2015 AND in2015 -> io2015
+dd2015 RSHIFT 1 -> dw2015
+NOT lo2015 -> lp2015
+c2015 LSHIFT 1 -> t2015
+dd2015 RSHIFT 3 -> df2015
+dd2015 RSHIFT 5 -> dg2015
+lh2015 AND li2015 -> lk2015
+lf2015 RSHIFT 5 -> li2015
+dy2015 RSHIFT 5 -> eb2015
+NOT kt2015 -> ku2015
+at2015 OR az2015 -> ba2015
+x2015 RSHIFT 3 -> z2015
+NOT lk2015 -> ll2015
+lb2015 OR la2015 -> lc2015
+1 AND r2015 -> s2015
+lh2015 OR li2015 -> lj2015
+ln2015 AND lp2015 -> lq2015
+kk2015 RSHIFT 5 -> kn2015
+ea2015 OR eb2015 -> ec2015
+ci2015 AND ct2015 -> cv2015
+b2015 RSHIFT 2 -> d2015
+jp2015 RSHIFT 1 -> ki2015
+NOT cr2015 -> cs2015
+NOT jd2015 -> je2015
+jp2015 RSHIFT 2 -> jq2015
+jn2015 OR jo2015 -> jp2015
+lf2015 RSHIFT 3 -> lh2015
+1 AND ds2015 -> dt2015
+lf2015 AND lq2015 -> ls2015
+la2015 LSHIFT 15 -> le2015
+NOT fg2015 -> fh2015
+at2015 AND az2015 -> bb2015
+au2015 AND av2015 -> ax2015
+kw2015 AND ky2015 -> kz2015
+v2015 OR w2015 -> x2015
+kk2015 OR kv2015 -> kw2015
+ks2015 AND ku2015 -> kv2015
+kh2015 LSHIFT 1 -> lb2015
+1 AND kz2015 -> la2015
+NOT kc2015 -> kd2015
+x2015 RSHIFT 2 -> y2015
+et2015 OR fe2015 -> ff2015
+et2015 AND fe2015 -> fg2015
+NOT ac2015 -> ad2015
+jl2015 OR jk2015 -> jm2015
+1 AND jj2015 -> jk2015
+bn2015 RSHIFT 1 -> cg2015
+NOT kp2015 -> kq2015
+ci2015 RSHIFT 3 -> ck2015
+ev2015 AND ew2015 -> ey2015
+1 AND ke2015 -> kf2015
+cj2015 AND cp2015 -> cr2015
+ir2015 LSHIFT 1 -> jl2015
+NOT gw2015 -> gx2015
+as2015 RSHIFT 2 -> at2015
+iu2015 RSHIFT 1 -> jn2015
+cy2015 LSHIFT 15 -> dc2015
+hg2015 OR hh2015 -> hi2015
+ci2015 RSHIFT 1 -> db2015
+au2015 OR av2015 -> aw2015
+km2015 AND kn2015 -> kp2015
+gj2015 RSHIFT 1 -> hc2015
+iu2015 RSHIFT 2 -> iv2015
+ab2015 AND ad2015 -> ae2015
+da2015 LSHIFT 1 -> du2015
+NOT bw2015 -> bx2015
+km2015 OR kn2015 -> ko2015
+ko2015 AND kq2015 -> kr2015
+bv2015 AND bx2015 -> by2015
+kl2015 OR kr2015 -> ks2015
+1 AND ht2015 -> hu2015
+df2015 AND dg2015 -> di2015
+NOT ag2015 -> ah2015
+d2015 OR j2015 -> k2015
+d2015 AND j2015 -> l2015
+b2015 AND n2015 -> p2015
+gf2015 OR ge2015 -> gg2015
+gg2015 LSHIFT 1 -> ha2015
+bn2015 RSHIFT 5 -> bq2015
+bo2015 OR bu2015 -> bv2015
+1 AND gy2015 -> gz2015
+s2015 LSHIFT 15 -> w2015
+NOT ie2015 -> if2015
+as2015 RSHIFT 5 -> av2015
+bo2015 AND bu2015 -> bw2015
+hz2015 AND ik2015 -> im2015
+bp2015 AND bq2015 -> bs2015
+b2015 RSHIFT 1 -> v2015
+NOT l2015 -> m2015
+bp2015 OR bq2015 -> br2015
+g2015 AND i2015 -> j2015
+br2015 AND bt2015 -> bu2015
+t2015 OR s2015 -> u2015
+hz2015 RSHIFT 5 -> ic2015
+gk2015 AND gq2015 -> gs2015
+fl2015 LSHIFT 1 -> gf2015
+he2015 RSHIFT 3 -> hg2015
+gz2015 LSHIFT 15 -> hd2015
+hf2015 OR hl2015 -> hm2015
+1 AND gd2015 -> ge2015
+fo2015 OR fz2015 -> ga2015
+id2015 AND if2015 -> ig2015
+fo2015 AND fz2015 -> gb2015
+gr2015 AND gt2015 -> gu2015
+he2015 OR hp2015 -> hq2015
+fq2015 AND fr2015 -> ft2015
+ga2015 AND gc2015 -> gd2015
+fo2015 RSHIFT 2 -> fp2015
+gl2015 OR gm2015 -> gn2015
+hg2015 AND hh2015 -> hj2015
+NOT hn2015 -> ho2015
+gl2015 AND gm2015 -> go2015
+he2015 RSHIFT 5 -> hh2015
+NOT gb2015 -> gc2015
+hq2015 AND hs2015 -> ht2015
+hz2015 RSHIFT 3 -> ib2015
+hz2015 RSHIFT 2 -> ia2015
+fq2015 OR fr2015 -> fs2015
+hx2015 OR hy2015 -> hz2015
+he2015 AND hp2015 -> hr2015
+gj2015 RSHIFT 5 -> gm2015
+hf2015 AND hl2015 -> hn2015
+hv2015 OR hu2015 -> hw2015
+NOT hj2015 -> hk2015
+gj2015 RSHIFT 3 -> gl2015
+fo2015 RSHIFT 3 -> fq2015
+he2015 RSHIFT 2 -> hf2015
