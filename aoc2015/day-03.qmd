@@ -1,0 +1,179 @@
+---
+title: "Advent of Code 2015"
+subtitle: "Day 3"
+format: html
+---
+
+Handling an infinitely large matrix? Nope!
+
+Tibble with coordinates? Yes!
+
+Based on the last positino we can add a row, based on the
+drunken-elfo-instructions. If we want to know how many presents have
+been delivered to a given positon, we count all the occurences of that
+position in the tibble.
+
+As always, because I speak tidy:
+
+```{r}
+library(tidyverse)
+```
+
+We make a tibble, which is not actually a grid, but a tidy grid:
+
+```{r}
+grid <- tibble(X = 0, Y = 0)
+```
+
+X is east/west, Y is north/south. If we go north, we add 1 to the
+Y-value of the current position, -1 if going south. And do not change
+the X-value.
+If we go east, we add 1 to the X-value. You get the point.
+
+We have an awful lot of instructions, and make a named list with 
+what should happen with the (X,Y) values of the current position,
+when we update it.
+
+```{r}
+scheme <- list("^" = c(X = 0, Y = 1),
+               "v" = c(X = 0, Y = -1),
+               "<" = c(X = -1, Y = 0),
+               ">" = c(X = 1, Y = 0))
+```
+
+We write a function to do that - it makes mapping easier:
+
+```{r}
+coord <- function(x){
+  scheme[[x]]
+}
+```
+
+It takes input, and returns the vector with the corresponding changes in
+X and Y.
+
+But we do not actually need to update anything. We just need to 
+register all the changes, and can find a given position by adding up
+all the changes - we do that by taking the cumulative sum.
+
+We have some examples:
+
+```{r}
+test <- "^v^v^v^v^v"
+```
+
+We split it 
+```{r}
+test %>% str_split_1("") %>% 
+  as_tibble() %>%   
+  transmute(coord = map(value, coord)) %>% 
+  unnest_wider(coord)
+```
+
+We are missing the first postion, (0,0). So let us add that:
+
+```{r}
+rbind(grid, test %>% 
+  str_split_1("") %>% 
+  as_tibble() %>%   
+  transmute(coord = map(value, coord)) %>% 
+  unnest_wider(coord)
+ )
+```
+
+This is the start position, and all changes. So now we take the cumulative
+sums:
+
+```{r}
+rbind(grid, test %>% 
+  str_split_1("") %>% 
+  as_tibble() %>%   
+  transmute(coord = map(value, coord)) %>% 
+  unnest_wider(coord)
+ ) %>% 
+  transmute(x = cumsum(X), y = cumsum(Y)) 
+```
+
+We now have the grid-coordinates, and simply needs to count how many
+times each coordinate has been visited. The number of rows in that
+result is the number of individual coordinates - and that is the 
+answer we are looking for:
+
+```{r}
+rbind(grid, test %>% 
+  str_split_1("") %>% 
+  as_tibble() %>%   
+  transmute(coord = map(value, coord)) %>% 
+  unnest_wider(coord)
+ ) %>% 
+  transmute(x = cumsum(X), y = cumsum(Y)) %>% 
+  count(x, y) %>% nrow()
+```
+
+That gives us the answer we are told is correct for the test.
+
+Now we simply have to do the same for the input file:
+
+```{r}
+input <- readLines("aoc2015/data/day-03-input.txt") 
+
+rbind(grid, input %>% 
+  str_split_1("") %>% 
+  as_tibble() %>%   
+  transmute(coord = map(value, coord)) %>% 
+  unnest_wider(coord)
+ ) %>% 
+  transmute(x = cumsum(X), y = cumsum(Y)) %>% 
+  count(x, y) %>% nrow()
+
+```
+Nice.
+
+## Task 2
+
+Robo-santa and Santa are going to share the distribution. Elfo is still drunk.
+
+We need to split up the input in two. Odd-numbered instructions go
+to Santa, even-numbered to Robo-santa.
+
+Read in data, add rownumbers, and split into two:
+
+```{r}
+input <- input %>% 
+  str_split_1("") %>% 
+  as_tibble() %>% 
+  mutate(r_num = 1:nrow(.))
+
+input_santa <- input %>% 
+  filter(r_num %% 2 == 1)
+input_robo_santa <- input %>% 
+  filter(r_num %% 2 != 1)
+
+```
+
+
+Repeat the exercise from above for the two versions of Santa.
+
+```{r}
+santa_grid <- rbind(grid, input_santa %>% 
+                          transmute(coord = map(value, coord)) %>% 
+                          unnest_wider(coord)) %>% 
+                          transmute(x = cumsum(X), 
+                                    y = cumsum(Y)) 
+
+robo_grid <- rbind(grid, input_robo_santa %>% 
+                          transmute(coord = map(value, coord)) %>% 
+                          unnest_wider(coord)) %>% 
+                          transmute(x = cumsum(X), 
+                                    y = cumsum(Y)) 
+
+
+```
+
+We then combine the two grids:
+```{r}
+rbind(santa_grid, robo_grid) %>% 
+  count(x, y) %>% 
+  nrow()
+```
+Done.

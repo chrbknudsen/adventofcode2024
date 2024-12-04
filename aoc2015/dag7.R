@@ -117,6 +117,8 @@ for(counter in 1:nrow(udtryk)){
 # a2015
 og jeg kan også løse nr. to.
 # så... Jeg skal "blot" have omdøbt alle variable til at ende på 2015...
+
+Jeg skal også have downloaded en ny udgave af input data
 sum(udtryk$orden != 0)
 # view(udtryk)
 # run_udtryk("c %LSHIFT% 1 ->> t", udtryk = udtryk)

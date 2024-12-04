@@ -4,7 +4,7 @@ subtitle: "Day 2"
 format: html
 ---
 
-Wrapping packages.
+## Wrapping packages.
 
 The total area of the box - we need to get the three pairwise products of
 width, length and height. The sum of that should be multiplied by 2. And the 
@@ -47,7 +47,8 @@ Download the input, read it in, convert it to a tibble, split on "x", and
 coerce to numeric:
 
 ```{r}
-input <- readLines("data/day-02-input.txt") %>% as_tibble() %>% 
+input <- readLines("data/day-02-input.txt") %>% 
+  as_tibble() %>% 
   mutate(dimensions = map(value, str_split_1, "x")) %>% 
   transmute(dimensions = map(dimensions, as.numeric))
 ```
@@ -66,21 +67,45 @@ Neat.
 
 ## Task 2
 
-Now we need the ribbon.
+Now we need the ribbon needed in total. Both around the package, and for
+the bow. 
 
+The length need for the wrapping is the sum of all three dimensions,
+minus the largest value. And multiply by 2:
 
-# ribbon - er blot produktet
-
+We write a function for that:
+```{r}
 wrap <- function(x){
   2*(sum(x) - max(x))
 }
+```
 
 
-readLines("aoc2015/data/day-02-input.txt") %>% as_tibble() %>% 
-  mutate(dimensions = map(value, str_split_1, "x")) %>% 
-  transmute(dimensions = map(dimensions, as.numeric)) %>% 
+Then theres the ribbon. For some undisclosed reason, that is simply the
+product of the dimensions. We're not going to write a function for that.
+
+
+We already have the input with a list column, dimensions, with numericial
+vectors.
+
+We mutate two new columns into existence, the ribbon is the product,
+the wrap is found using our function from before:
+```{r}
+input <- input %>% 
   mutate(ribbon = map(dimensions, prod)) %>% 
-  mutate(wrap = map(dimensions, wrap)) %>% 
+  mutate(wrap = map(dimensions, wrap))
+input
+```
+
+Unnest those, add, and summarise:
+ 
+ 
+```{r}
+input %>% 
   unnest(c(ribbon, wrap)) %>% 
   transmute(sub_tot = ribbon + wrap) %>% 
-  summarise(svar = sum(sub_tot))
+  summarise(answer = sum(sub_tot))
+
+```
+ 
+Done.
