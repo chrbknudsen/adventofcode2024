@@ -1,0 +1,82 @@
+---
+title: "Advent of Code 2015"
+subtitle: "Day 4"
+format: html
+---
+
+We have some input to an MD5 hash algorithm.
+
+It consist of some padding, which is provide, preprended to
+a number in decimal.
+
+We now need to find the lowest positive integer, with no leading zeroes,
+that results in a hash that starts with at least five zeroes.
+
+
+We use a library to get access to an MD5 function:
+```{r}
+library(openssl)
+```
+
+And test that 
+```{r}
+test_hash <- md5("abcdef609043")
+```
+
+Starts with "00000":
+
+```{r}
+startsWith(md5("abcdef609043"), "00000")
+```
+
+Cool, the md5 function we get from openssl actually works as expected.
+
+We write a function, that checks if a given integer, x, padded with `pad`,
+returns a result starting with n zeroes:
+
+```{r}
+solution <- function(x, pad = "abcdef", n = 5){
+  startsWith(md5(paste0(pad,x)), paste0(rep(0,n), collapse = ""))
+}
+```
+
+
+The input we are given for padding is:
+
+```{r}
+pad <- "iwrupvqb"
+```
+
+And we can now find the answer by bruteforcing:
+```{r eval = FALSE}
+res <- FALSE
+i <- 0
+while(!res){
+  res <- solution(i, pad = pad, n = 5 )
+  if(res){
+    answer <- i}
+  i <- i+1
+}
+answer
+```
+But we are not going to show it here.
+
+## Part 2.
+
+Same problem. Now with six zeroes instead of five.
+
+
+```{r eval = FALSE}
+res <- FALSE
+i <- 0
+while(!res){
+  res <- solution(i, pad = pad, n = 6 )
+  if(res){
+    answer <- i}
+  i <- i+1
+}
+answer
+```
+
+We dont show that either.
+9958218 var svaret. Det tager tid...

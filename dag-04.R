@@ -7,6 +7,7 @@ input <<- example %>%
   transmute(values = str_split(value, "")) %>% 
   unnest_wider(values, names_sep = "") %>% 
   as.matrix()
+
 example[[1,1]]
 
 # For en given position, (x,y), er [x,y] == X?
