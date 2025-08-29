@@ -53,4 +53,36 @@ update <- function(X0,Y0,X1,Y1, action){
   
 }
 
- 
+
+ for(i in 1:nrow(orders)){
+   update(orders$X0[[i]], orders$Y0[[i]], orders$X1[[i]], orders$Y1[[i]], orders$switch[[i]])
+ }
+
+sum(lysene)
+
+
+# del 2
+
+lysene <- matrix(data = 0, nrow  = 1000, ncol = 1000)
+# Nu 0, da vi justerer på lysstyrke i stedet
+
+update <- function(X0,Y0,X1,Y1, action){
+  if(action == "on"){
+    lysene[X0:X1, Y0:Y1] <<- lysene[X0:X1, Y0:Y1] + 1
+  }
+  if(action == "off"){
+    lysene[X0:X1, Y0:Y1] <<- lysene[X0:X1, Y0:Y1] - 1
+    lysene[lysene < 0] <<- 0
+  }
+  if(action == "toggle"){
+    lysene[X0:X1, Y0:Y1] <<- lysene[X0:X1, Y0:Y1] + 2
+  } 
+  
+}
+
+
+ for(i in 1:nrow(orders)){
+   update(orders$X0[[i]], orders$Y0[[i]], orders$X1[[i]], orders$Y1[[i]], orders$switch[[i]])
+ }
+
+sum(lysene)
