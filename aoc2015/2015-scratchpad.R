@@ -1,3 +1,10 @@
+bordplanen bør nok løses som et graf teoretisk problem
+
+der skulle være en pakke "TSP" der kan såfan noget
+
+der er også en betegnelse for det. Hamiltonian optræder i det 
+
+
 # dag 7
 
 # Instruktioner af denne type.
