@@ -1,0 +1,26 @@
+---
+title: "Untitled"
+format: html
+---
+
+
+```{r}
+library(gt)
+library(dplyr)
+
+# Lav et data frame med årene som rækker
+df <- data.frame(År = 2015:2024)
+
+# Tilføj kolonner for dagene 1–25
+for (d in 1:25) {
+  df[[as.character(d)]] <- "🎅"  # eller "" hvis du vil have tomme felter
+}
+
+# Lav en gt-tabel
+df %>%
+  gt(rowname_col = "År") %>%
+  tab_header(
+    title = "Julekalender-tabel",
+    subtitle = "Årene 2015–2024 og dagene 1–25"
+  )
+```
