@@ -1,0 +1,16 @@
+execute-dir: file
+project:
+  type: website
+
+website:
+  title: "Advent of Code"
+  navbar:
+    left:
+      - href: index.qmd
+        text: "Tilbage til forsiden"
+
+format:
+  html:
+    theme: cosmo
+    toc: false
+    page-layout: full

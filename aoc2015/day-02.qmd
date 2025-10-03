@@ -47,6 +47,7 @@ Download the input, read it in, convert it to a tibble, split on "x", and
 coerce to numeric:
 
 ```{r}
+library(tidyverse)
 input <- readLines("data/day-02-input.txt") %>% 
   as_tibble() %>% 
   mutate(dimensions = map(value, str_split_1, "x")) %>% 

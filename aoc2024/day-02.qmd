@@ -40,6 +40,8 @@ I read it, convert it to at tibble, split it on white spaces, and
 coerce it to numeric. All in a list-column:
 
 ```{r}
+library(tidyverse)
+
 example <- readLines("data/day-02-example.txt") %>% 
   as_tibble() %>% 
   mutate(vectors = str_split(value, " ")) %>% 

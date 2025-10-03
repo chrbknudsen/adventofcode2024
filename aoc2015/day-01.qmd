@@ -17,6 +17,7 @@ taking the sum of 1s (if the character is "("), and -1s (if the character is "("
 We can split a test string in individual characters:
 
 ```{r}
+library(tidyverse)
 test <- "))((((("
 str_split_1(test,"")
 ```

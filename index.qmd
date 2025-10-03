@@ -1,7 +1,53 @@
 ---
-title: "oversigt over aoc"
-format: html
+title: "Advent of Code"
+format:
+  html:
+    page-layout: full
+navbar: false
+freeze: false       # tving Quarto til altid at re-rendere (ingen frys af HTML)
+execute:
+  cache: false      # slå knitr/execute-cache fra
+  dir: file
 ---
 
-Solutions to advent of code
+```{r echo = FALSE, warning = FALSE, message = FALSE}
+library(gt)
+library(dplyr)
+library(glue)
 
+years    <- 2015:2024
+day_cols <- as.character(1:25)
+
+# Kilderod: Quarto sætter QUARTO_PROJECT_DIR ved preview/render
+root <- normalizePath(Sys.getenv("QUARTO_PROJECT_DIR", unset = getwd()),
+                      winslash = "/", mustWork = FALSE)
+
+# Skelet
+df <- tibble(År = years)
+for (d in day_cols) df[[d]] <- NA_character_
+
+# Udfyld KUN hvor filen findes under kilderoden
+for (y in years) {
+  for (d in 1:25) {
+    rel <- glue("aoc{y}/day-{sprintf('%02d', d)}.qmd")
+    abs <- file.path(root, rel)
+    if (file.exists(abs)) df[df$År == y, as.character(d)] <- rel
+  }
+}
+
+# Render: indsæt HTML pr. celle (ingen markdown)
+df %>%
+  gt(rowname_col = "År") %>%
+  tab_header(title = "Julekalender",
+             subtitle = "Årene 2015–2024 og dagene 1–25") %>%
+  text_transform(
+    locations = cells_body(columns = all_of(day_cols)),
+    fn = function(x) {
+      # returnér én HTML pr. celle som liste
+      lapply(x, function(v) {
+        if (is.na(v) || v == "") gt::html("") else gt::html(paste0("<a href='", v, "'>🎅</a>"))
+      })
+    }
+  ) |> 
+    tab_options(table.width = gt::pct(100))
+```

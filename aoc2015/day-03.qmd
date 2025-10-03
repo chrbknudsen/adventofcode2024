@@ -115,7 +115,7 @@ That gives us the answer we are told is correct for the test.
 Now we simply have to do the same for the input file:
 
 ```{r}
-input <- readLines("aoc2015/data/day-03-input.txt") 
+input <- readLines("../aoc2015/data/day-03-input.txt") 
 
 rbind(grid, input %>% 
   str_split_1("") %>% 
