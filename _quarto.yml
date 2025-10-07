@@ -1,6 +1,7 @@
 execute-dir: file
 project:
   type: website
+  output-dir: docs
 
 website:
   title: "Advent of Code"
