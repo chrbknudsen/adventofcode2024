@@ -106,6 +106,11 @@ for(instruks in input){
 rute
 jeg har en aktuel position. Og en ny position. Og skal have markeret alle derimellem.
 
+find_mellem <- function(a, b){
+  
+
+}
+
 c(8,-4)
 c(4,-4)
 skal give:
