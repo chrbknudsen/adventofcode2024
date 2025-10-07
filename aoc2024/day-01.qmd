@@ -8,7 +8,7 @@ format: html
 
 As always:
 
-```{r}
+```{r load-libs, message = FALSE}
 library(tidyverse)
 ```
 
@@ -71,7 +71,7 @@ example %>%
 Count the occurences of numbers in list 2, right join - due to the flow in
 the pipe on example. Remember to join on the correct columns. Transmute to 
 get the count multiplied by the number. Do not confuse yourself that the column
-is now called list2. And summarise. Use na.rm = T, to account for missing mathces
+is now called list2. And summarise. Use na.rm = T, to account for missing matches
 resulting in NA values.
 
 Correct answer - the method is working.
@@ -89,4 +89,4 @@ data %>%
 Remember to change column names, and to join on the actual data, rather than
 on example. 
 
-Done.
+Done 🎄

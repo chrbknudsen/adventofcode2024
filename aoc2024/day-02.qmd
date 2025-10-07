@@ -4,8 +4,10 @@ subtitle: "Day 2"
 format: html
 ---
 
+## Getting running differences
+
 As always:
-```{r}
+```{r load-libs, message = FALSE}
 library(tidyverse)
 ```
 
@@ -39,16 +41,14 @@ txt-file.
 I read it, convert it to at tibble, split it on white spaces, and 
 coerce it to numeric. All in a list-column:
 
-```{r}
-library(tidyverse)
-
+```{r warning = FALSE}
 example <- readLines("data/day-02-example.txt") %>% 
   as_tibble() %>% 
   mutate(vectors = str_split(value, " ")) %>% 
   mutate(vectors = map( vectors, as.numeric))
 ```
 
-Now we can map the check-function the list-column, unnest it, at 
+Now we can map the check-function on the list-column, unnest it, and
 sum all the logical values:
 
 ```{r}
@@ -58,7 +58,7 @@ example %>%
   summarise(answer = sum(check))
 ```
 
-# Task 1
+#### The actual task
 
 Having checked that the example returns the correct answer, we run 
 it on the input. First read in the data:
@@ -76,13 +76,14 @@ task %>%
   transmute(check = map(vectors, check)) %>% 
   unnest(check) %>% 
   summarise(answer = sum(check))
-
 ```
   
 
         
 
-# part2
+### Part 2
+
+#### The example
 
 We need to remove the first element in the vector, and check it. And 
 to remove the second element and check that, etc. 
@@ -109,7 +110,11 @@ example %>%
   unnest(check) %>% 
   summarise(answer = sum(check))
 ```
-We get the correct answer, and now runt the same code on the task-data:
+
+#### The actual task
+
+We got the correct answer, and now run the same code on the task-data:
+
 
 ```{r}
 task %>%   
@@ -118,4 +123,4 @@ task %>%
   summarise(answer = sum(check))
 ```
 
-Done.
+Done 🎄

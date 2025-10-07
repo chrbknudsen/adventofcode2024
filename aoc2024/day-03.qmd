@@ -4,10 +4,16 @@ subtitle: "Day 3"
 format: html
 ---
 
-## Task 1
+## Regular expressions
+
+This is an exercise in regular expressions, and datamanipulation.
+
+We need to extract all parts of the input text matching the form "mul(123,456)"
+
+
 
 As always:
-```{r}
+```{r load-libs, message = FALSE}
 library(tidyverse)
 ```
 
@@ -16,9 +22,7 @@ And read the data - again a local copy:
 input <- readLines("data/day-03-input.txt") 
 ```
 
-This is an exercise in regular expressions, and datamanipulation.
 
-We need to extract all parts of the input text matching the form "mul(123,456)"
 
 So lets do that:
 
