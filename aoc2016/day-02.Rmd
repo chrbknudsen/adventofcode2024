@@ -1,0 +1,184 @@
+---
+title: "Advent of Code 2016"
+subtitle: "Day "
+format: html
+---
+
+## Lookup toilets
+
+A tale of two lookup tables.
+
+```{r lib-load}
+library(stringr)
+```
+
+### Part 1
+
+On a keypad, start somewhere, follow instructions moving around. First set of 
+instructions give the first value. Second set of instructions, starting at the 
+first value from the previous set of instructions, give the second value.
+Continue until you run out of instructions.
+
+#### The example
+
+This the the keypad. We start at 5, instructions "UU" moves up to "2". The second "U" does not
+change anything, because we cannot go up from that
+
+123
+456
+789
+
+We make a lookup table. Given a position and an instruction, what is the new position?
+
+```{r}
+lut <- c( 1, 4, 1, 2,
+ 2, 5, 1, 3,
+ 3, 6, 2, 3,
+ 1, 7, 4, 5,
+ 2, 8, 4, 6,
+ 3, 9, 5, 6,
+ 4, 7, 7, 8,
+ 5, 8, 7, 9,
+ 6, 9, 8, 9) |> 
+  matrix(nrow = 9, byrow = T,
+    dimnames = list(pos = c(1:9), instruction = c("U", "D", "L", "R")))
+lut
+```
+
+And a function for updating the position:
+
+```{r}
+new_pos <- function(pos, instruction){
+  lut[pos, instruction]
+}
+```
+
+Construct the instruction set:
+
+```{r}
+input <- c("ULL", "RRDDD", "LURDL", "UUUUD")
+```
+
+Split and save in list:
+
+```{r}
+input <-   str_split(input, "")
+```
+
+Write a function that loops through the length of the instruction set,
+and in an inner loop loops through the instructions in each element.
+```{r}
+answer <- numeric()
+pos <- 5
+for(i in 1:length(input)){
+  for(j in input[[i]]){
+    pos <- new_pos(pos, j)
+  }
+answer[i] <- pos
+}
+
+answer <- paste0(answer, collapse = "")
+```
+
+Returns the correct answer!
+
+#### The actual task
+
+Now read in the complete instruction set:
+
+```{r}
+input <- readLines("aoc2016/data/02-input.txt")
+input <-   str_split(input, "")
+
+answer <- numeric()
+pos <- 5
+for(i in 1:length(input)){
+  for(j in input[[i]]){
+    pos <- new_pos(pos, j)
+  }
+answer[i] <- pos
+}
+
+answer <- paste0(answer, collapse = "")
+
+```
+
+### Part 2
+
+Basically the exact same task. But with different layout of keypad.
+
+
+
+#### The example
+
+New lookup-table:
+
+```{r}
+lut <- c("1",	"3",	"1",	"1",
+"2",	"6",	"2",	"3",
+"1",	"7",	"2",	"4",
+"4",	"8",	"3",	"4",
+"5",	"5",	"5",	"6",
+"2",	"A",	"5",	"7",
+"3",	"B",	"6",	"8",
+"4",	"C",	"7",	"9",
+"9",	"9",	"8",	"9",
+"6",	"A",	"A",	"B",
+"7",	"D",	"A",	"C",
+"8",	"C",	"B",	"C",
+"B",	"D",	"D",	"D") |> 
+    matrix(nrow = 13, byrow = T,
+    dimnames = list(pos = c(as.character(1:9), LETTERS[1:4]), instruks = c("U", "D", "L", "R")))
+
+lut
+```
+
+The test input:
+
+```{r}
+input <- c("ULL", "RRDDD", "LURDL", "UUUUD")
+input <-   str_split(input, "")
+```
+
+And apply the same procedure. But remember that we now have characters on
+the keypad.
+
+```{r}
+answer <- character()
+pos <- "5"
+for(i in 1:length(input)){
+  for(j in input[[i]]){
+    pos <- new_pos(pos, j)
+  }
+answer[i] <- pos
+}
+
+answer <- paste0(answer, collapse = "")
+answer
+```
+
+Nice
+
+#### The actual task
+
+The exact same procedure, now with the full input:
+
+```{r}
+input <- readLines("aoc2016/data/02-input.txt")
+input <-   str_split(input, "")
+
+
+answer <- character()
+pos <- "5"
+for(i in 1:length(input)){
+  for(j in input[[i]]){
+    pos <- new_pos(pos, j)
+  }
+answer[i] <- pos
+}
+
+answer <- paste0(answer, collapse = "")
+
+```
+
+Done 🎄
