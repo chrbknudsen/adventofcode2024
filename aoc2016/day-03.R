@@ -33,3 +33,16 @@ lapply(input, ok_trekant) |> unlist() |> sum()
 
 # part2
 
+input <- readLines("aoc2016/data/03-input.txt") |> 
+  str_squish() |> 
+  str_split(" ") |> 
+  lapply(as.numeric) %>% 
+  do.call(rbind, args= .) |> 
+  as_tibble()
+
+
+input <- c(input$V1, input$V2, input$V3) |> 
+  matrix(ncol = 3, byrow = TRUE)
+
+apply(input, 1, ok_trekant) |> sum()
+
