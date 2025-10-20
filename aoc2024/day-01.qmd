@@ -43,8 +43,8 @@ sum(abs(sort(example$list1) - sort(example$list2)))
 Downloading the lists computationally is a bit cumbersome. I'm simply saving
 it directly to disk and reading it:
 
-```{r}
-data <- read_delim("data/01-input", delim = "   ", col_names = F)
+```{r read-input}
+data <- read_delim("data/day-01-input.txt", delim = "   ", col_names = F)
 ```
 
 

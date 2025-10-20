@@ -86,8 +86,8 @@ Returns the correct answer!
 
 Now read in the complete instruction set:
 
-```{r}
-input <- readLines("aoc2016/data/02-input.txt")
+```{r readin-input}
+input <- readLines("data/02-input.txt")
 input <-   str_split(input, "")
 
 answer <- numeric()
@@ -163,8 +163,8 @@ Nice
 
 The exact same procedure, now with the full input:
 
-```{r}
-input <- readLines("aoc2016/data/02-input.txt")
+```{r readinput-task-2}
+input <- readLines("data/02-input.txt")
 input <-   str_split(input, "")
 
 
