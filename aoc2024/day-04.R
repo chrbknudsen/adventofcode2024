@@ -7,11 +7,11 @@ library(tidyverse)
 tidligere arbejde
 
 library(tidyverse)
-example <- readLines("data/day-04-input.txt") %>% as_tibble()
+example <- readLines("aoc2024/data/day-04-input.txt") %>% as_tibble()
 example %>% 
   mutate(længde = nchar(value))
 
-input <<- example %>% 
+input <- example %>% 
   transmute(values = str_split(value, "")) %>% 
   unnest_wider(values, names_sep = "") %>% 
   as.matrix()
@@ -69,10 +69,6 @@ example[[1,1]]
 # }
 # 
 
-# Hm...
-
-# mere tidy?
-
 # 
 # 
 # 
@@ -100,14 +96,10 @@ example[[1,1]]
 # Så vi kan ikke appelere til de unge mænd om at dukke op, med en budskab om
 # uretfærdigheden i deres underrepræsentation.
 # 
-# sådan en workbook er selvfølgelig fin. Er det noget der skal overvejes?
-#   
-# 
-# input
 
-example <- readLines("data/day-04-input.txt") %>% as_tibble()
+example <- readLines("aoc2024/data/day-04-input.txt") %>% as_tibble()
 
-input <<- example %>% 
+input <- example %>% 
   transmute(values = str_split(value, "")) %>% 
   unnest_wider(values, names_sep = "")
 
