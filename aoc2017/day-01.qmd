@@ -6,34 +6,30 @@ format: html
 
 ## Shifting and comparing
 
-### part 1
-#### the example
+### Part 1
 
-#### The actual task
-
-### Part 2
+Having a sequence of digits, one digit with the next (or, if the digit is the last, the first digit in the sequence).
+The digits that are the same as the next digit, are added together. Do that for a very large number.
 
 #### The example
 
-#### The actual task
+- 1122 produces a sum of 3 (1 + 2) because the first digit (1) matches the second digit and the third digit (2) matches the fourth digit.
+- 1111 produces 4 because each digit (all 1) matches the next.
+- 1234 produces 0 because no digit matches the next.
+- 91212129 produces 9 because the only digit that matches the next one is the last digit, 9.
 
+Construct the test-cases:
+```{r part-1-example}
+example <- c("1122", "1111", "1234", "91212129")
+```
 
+Why a character vector? The input for the actual task might technically be a number. But it is so huge
+that we do not want to handle it as such.
 
-1122 produces a sum of 3 (1 + 2) because the first digit (1) matches the second digit and the third digit (2) matches the fourth digit.
-1111 produces 4 because each digit (all 1) matches the next.
-1234 produces 0 because no digit matches the next.
-91212129 produces 9 because the only digit that matches the next one is the last digit, 9.
-
-
-
-
-example <- c("1122" ,
-"1111" ,
-"1234" ,
-"91212129")
-
-input <- readLines("aoc2017/data/day-01-input.txt")
-
+We split the input, and convert to a numeric vector. Next that vector is shiftet to the right,
+placing the last value as the first, the first as the second etc. Then we compare those two vectors,
+and use that as a boolean index to the values. 
+```{r}
 library(tidyverse)
 
 captcha <- function(input){
@@ -42,24 +38,68 @@ captcha <- function(input){
   sum(input[input == input_shifted])
 }
 
+```
 
+Testning:
+
+```{r}
 captcha(example[4])
+```
 
+It works.
+
+#### The actual task
+
+Read in the input:
+```{r}
 input <- readLines("aoc2017/data/day-01-input.txt")
+```
+
+Use it as input to the function:
+
+```{r}
 captcha(input)
-# korrekt svar 1!
+```
 
-# del 2
+First star!
 
-# En ny funktion: 
-  next_captcha <- function(input){
-  input <- str_split_1(input, "") |> as.numeric()
-  len <- length(input)
-  input_shifted <- c(input[(len/2+1):len], input[1:(len/2)])
-  sum(input[input == input_shifted])
+### Part 2
+
+Next we need to shift the vector even more. 50% in fact. This requires a new captcha function:
+
+```{r part-2-function}
+next_captcha <- function(input){
+    input <- str_split_1(input, "") |> as.numeric()
+    len <- length(input)
+    input_shifted <- c(input[(len/2+1):len], input[1:(len/2)])
+    sum(input[input == input_shifted])
   }
+```
 
+#### The example
 
+- 1212 produces 6: the list contains 4 items, and all four digits match the digit 2 items ahead.
+- 1221 produces 0, because every comparison is between a 1 and a 2.
+- 123425 produces 4, because both 2s match each other, but no other digit has a match.
+- 123123 produces 12.
+- 12131415 produces 4.
 
+Setting up example data:
+
+```{r}
+example <- c("1212", "1221", "123425", "123123", "12131415")
+```
+
+Testing:
+
+```{r}
+next_captcha(example[2])
+```
+
+#### The actual task
+
+```{r}
 next_captcha(input)
+```
+
 Done 🎄
