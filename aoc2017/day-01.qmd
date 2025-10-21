@@ -52,7 +52,7 @@ It works.
 
 Read in the input:
 ```{r}
-input <- readLines("aoc2017/data/day-01-input.txt")
+input <- readLines("data/day-01-input.txt")
 ```
 
 Use it as input to the function:
