@@ -1,3 +1,23 @@
+---
+title: "Advent of Code 2017"
+subtitle: "Day 1"
+format: html
+---
+
+## Shifting and comparing
+
+### part 1
+#### the example
+
+#### The actual task
+
+### Part 2
+
+#### The example
+
+#### The actual task
+
+
 
 1122 produces a sum of 3 (1 + 2) because the first digit (1) matches the second digit and the third digit (2) matches the fourth digit.
 1111 produces 4 because each digit (all 1) matches the next.
@@ -42,4 +62,4 @@ captcha(input)
 
 
 next_captcha(input)
-den er også korrekt!
+Done 🎄
