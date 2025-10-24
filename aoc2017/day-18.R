@@ -22,7 +22,7 @@ example <- c("set a 1",
 "set a 1",
 "jgz a -2")
 
-
+example <- readLines("aoc2017/data/day-18-input.txt")
 
 input <- strsplit(trimws(example), " ")
 instructions <- vapply(input, "[[", "", 1)
@@ -54,16 +54,16 @@ names(registers) <- unique(register)
 
 pointer <- 1
 
-while(pointer >0 && pointer <= length(instructions)){
-  operation <- instructions[pointer]
+while(pointer > 0 && pointer <= length(instructions)){
+  operation <- instructions[pointer]; print("operation"); print(operation)
   switch(operation,
     "set" = {registers[[register[pointer]]] <- return_value(value[pointer]);pointer <- pointer + 1 ; print("SET"); print(pointer)},
     "add" = {registers[[register[pointer]]] <- registers[[register[pointer]]] + return_value(value[pointer]) ;pointer <- pointer + 1; print("ADD"); print(pointer)},
-    "mul" = {registers[[register[pointer]]] <- registers[[register[pointer]]]*return_value(value[pointer]) ;pointer <- pointer + 1; print(MUL)},
-    "mod" = {registers[[register[pointer]]] <- registers[[register[pointer]]]%%return_value(value[pointer]); pointer <- pointer + 1},
-    "snd" = {sound <- registers[[register[pointer]]]; pointer <- pointer + 1},
-    "rcv" = {if(registers[[register[pointer]]]!=0){last_sound_played <- sound; pointer <- -100; print("STOP")}},
-    "jgz" = {if(registers[[register[pointer]]]>0){pointer <- pointer + return_value(value[pointer])}; print("JGZ"); print(pointer)},
+    "mul" = {registers[[register[pointer]]] <- registers[[register[pointer]]]*return_value(value[pointer]) ;pointer <- pointer + 1; print("MUL"); print(pointer)},
+    "mod" = {registers[[register[pointer]]] <- registers[[register[pointer]]]%%return_value(value[pointer]); pointer <- pointer + 1; print("MOD") ; print(pointer)},
+    "snd" = {sound <- registers[[register[pointer]]]; pointer <- pointer + 1; print("SND") ; print(pointer)},
+    "rcv" = {if(registers[[register[pointer]]]!=0){last_sound_played <- sound; pointer <- -100; print("RCV"); print(pointer); stop()}else{pointer <- pointer + 1}},
+    "jgz" = {if(registers[[register[pointer]]]>0){pointer <- pointer + return_value(value[pointer])}else{pointer <- pointer + 1}; print("JGZ"); print(pointer)},
     stop("Ukendt opcode: ", operation)
 
   )
