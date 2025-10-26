@@ -46,4 +46,14 @@ as.numeric() |>
 
 ### Part 2
 
+Now we need to transform the data recursively
+
+fuel_req_2 <- function(input){
+  result <- fuel_req(input)
+  while(temp > 0){}
+}
+
 library(tidyverse)
+
+
+
