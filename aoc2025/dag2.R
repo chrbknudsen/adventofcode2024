@@ -7,15 +7,16 @@ m <- regexpr("(.+)(?=.*\\1)", x, perl = TRUE)
 grepl("(.+)(?=.*\\1)", x, perl = TRUE)
 
 
-invalid_id <- function(x){
-  grepl("(.+)(?=.*\\1)", x, perl = TRUE)
-}
+
 
 invalid_id <- function(x){
   x <- as.character(x)
   substring(x, 1, nchar(x)/2) == substring(x, nchar(x)/2 + 1, nchar(x))
 }
+invalid_id <- function(x){
+ grepl("^(.+?)\\1+$", x)
 
+}
 invalid_id <- compiler::cmpfun(invalid_id)
 
 4174379265
