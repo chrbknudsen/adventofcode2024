@@ -37,5 +37,7 @@ kun er 12 tilbage. Og at fjerne den første mindste værdi først.
 
 max_voltage <- function(bank){
 
+scraping_tables_on_multiple_pages_with_predictable_URLS.Rmd  
+scraping_tables_on_multiple_pages_with_predictable_URLS.Rmd
 
 }
